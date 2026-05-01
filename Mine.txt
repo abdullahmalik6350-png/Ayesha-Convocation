@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congratulations Ayesha 🎓</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    overflow: hidden;
+    color: white;
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0) scale(1);}
+    100% {transform: translateY(-110vh) scale(1.5);}
+}
+
+/* Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(255,255,255,0.2);
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    color: #ffd700;
+    font-size: 2.5em;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+.highlight {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #ff1e4d;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Audio -->
+<audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<!-- Floating Hearts Script -->
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+setInterval(createHeart, 300);
+
+// Play Music Function
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.play();
+}
+</script>
+
+<div class="container">
+    <div class="card">
+        <h1>Congratulations Ayesha 🎓</h1>
+
+        <p>
+            My beautiful Ayesha, today you shine as a symbol of
+            <span class="highlight">hard work, passion, and excellence</span>.
+        </p>
+
+        <p>
+            This convocation is not the end—it is the beginning of a future
+            filled with <span class="highlight">limitless success and achievements</span>.
+        </p>
+
+        <p>
+            Keep rising, keep believing, and keep chasing your dreams.
+            You are capable of greatness beyond imagination,
+            and I will always be proud to stand beside you ❤️
+        </p>
+
+        <!-- Play Button -->
+        <button class="btn" onclick="playMusic()">🎶 Play Music</button>
+
+        <br>
+
+        <button class="btn">Forever Yours 💖</button>
+    </div>
+</div>
+
+</body>
+</html>
